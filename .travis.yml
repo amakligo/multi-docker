@@ -10,7 +10,7 @@ script:
 
 after_success:
     - docker build -t alfredhawkman/multi-client ./client
-    - docker build -t alfredhawkman/multi-ngix ./nginx
+    - docker build -t alfredhawkman/multi-nginx ./nginx
     - docker build -t alfredhawkman/multi-server ./server
     - docker build -t alfredhawkman/multi-worker ./worker
     # login into docker cli
@@ -18,6 +18,6 @@ after_success:
 
     # push images to dockerhub
     - docker push alfredhawkman/multi-client
-    - docker push alfredhawkman/multi-ngix
+    - docker push alfredhawkman/multi-nginx
     - docker push alfredhawkman/multi-server
     - docker push alfredhawkman/multi-worker
